@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/DataLab-Rotterdam/triton/compare/v1.0.1...v1.0.2) (2026-02-23)
+
+
+### Bug Fixes
+
+* rerun actions ([db88b0f](https://github.com/DataLab-Rotterdam/triton/commit/db88b0f496a623827bc9b5d14e82b6143c8e2a22))
+
 ## [1.0.1](https://github.com/DataLab-Rotterdam/triton/compare/v1.0.0...v1.0.1) (2026-02-23)
 
 

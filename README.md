@@ -1,4 +1,4 @@
-# triton
+# Triton
 
 TypeScript-first API client for the DAMEN Triton REST API.
 

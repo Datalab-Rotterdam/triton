@@ -1,6 +1,6 @@
 {
   "name": "triton",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A TypeScript-first, dependency-free API client for the DAMEN Triton REST API",
   "main": "./dist/index.es.js",
   "module": "./dist/index.es.js",

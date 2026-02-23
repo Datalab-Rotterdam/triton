@@ -1,5 +1,5 @@
 {
-  "name": "triton",
+  "name": "damen-triton",
   "version": "1.0.1",
   "description": "A TypeScript-first, dependency-free API client for the DAMEN Triton REST API",
   "main": "./dist/index.es.js",
@@ -27,7 +27,7 @@
     "examples/04_virtual_and_data": "tsx --env-file=.env examples/04_virtual_and_data.ts",
     "examples/05_token_manual_control": "tsx --env-file=.env examples/05_token_manual_control",
     "examples/06_get_all_sensors": "tsx --env-file=.env examples/06_get_all_sensors.ts",
-    "docs:build": "typedoc src/index.ts --out generated/docs --name \"triton\" --theme default --excludePrivate --excludeProtected"
+    "docs:build": "typedoc src/index.ts --out generated/docs --name \"damen-triton\" --theme default --excludePrivate --excludeProtected"
   },
   "repository": {
     "type": "git",
@@ -36,7 +36,9 @@
   "keywords": [
     "triton",
     "damen",
-    "vessels"
+    "vessels",
+    "shipping",
+    "sensors"
   ],
   "author": "A.P.A. Slaa",
   "license": "Apache-2.0",
@@ -80,7 +82,7 @@
             "package.json",
             "CHANGELOG.md"
           ],
-          "message": "triton(release): 🚀 ${nextRelease.version} \n\n${nextRelease.notes}"
+          "message": "damen-triton(release): 🚀 ${nextRelease.version} \n\n${nextRelease.notes}"
         }
       ]
     ]

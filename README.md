@@ -1,4 +1,4 @@
-# Triton
+# damen-triton
 
 TypeScript-first API client for the DAMEN Triton REST API.
 
@@ -10,7 +10,7 @@ TypeScript-first API client for the DAMEN Triton REST API.
 ## Installation
 
 ```bash
-npm install triton
+npm install damen-triton
 ```
 
 ## Requirements
@@ -24,7 +24,7 @@ npm install triton
 ## Quick Start
 
 ```ts
-import client from "triton";
+import client from "damen-triton";
 
 const triton = client({
   apiKey: process.env.TRITON_API_KEY!,

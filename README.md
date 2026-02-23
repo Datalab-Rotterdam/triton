@@ -26,7 +26,7 @@ npm install triton
 ```ts
 import client from "triton";
 
-const api = client({
+const triton = client({
   apiKey: process.env.TRITON_API_KEY!,
   subscriptionKey: process.env.TRITON_SUBSCRIPTION_KEY!,
   yardNumber: process.env.TRITON_YARD_NUMBER!,
@@ -37,10 +37,10 @@ const api = client({
   },
 });
 
-const metadata = await api.metadata();
+const metadata = await triton.metadata();
 console.log(metadata.vesselInfo.id);
 
-const latest = await api.sensors().sensor("1000").latest_reading({
+const latest = await triton.sensors().sensor("1000").latest_reading({
   isManualInput: false,
 });
 console.log(latest);
@@ -69,7 +69,7 @@ type ClientConfig = {
 
 ### 1) Api-Key + manual token handling
 
-Use `api.token.create(...)` or pass your own `Authorization` header in low-level requests.
+Use `triton.token.create(...)` or pass your own `Authorization` header in low-level requests.
 
 ### 2) Api-Key + auto token renewal (recommended)
 
@@ -77,8 +77,8 @@ Provide `clientConfig`. The client renews token automatically before requests th
 
 ## Vessel Resolution
 
-- `api.sensors(<vessel_id>)` uses explicit vessel id
-- `api.sensors()` resolves vessel id lazily through `api.metadata()` using:
+- `triton.sensors(<vessel_id>)` uses explicit vessel id
+- `triton.sensors()` resolves vessel id lazily through `api.metadata()` using:
   - `subscriptionKey`
   - `yardNumber`
 
@@ -88,28 +88,28 @@ If these are missing, methods that require vessel context throw an error.
 
 ### Metadata
 
-- `api.metadata(options?)`
+- `triton.metadata(options?)`
   - Fetches `/api/v1/metadata/vessels`
   - Caches `vessel_id` in client context
 
 ### Sensors
 
-- `api.sensors(vesselId?).list()`
-- `api.sensors(vesselId?).sensor(sensorId).latest_reading(query?)`
-- `api.sensors(vesselId?).sensor(sensorId).readings(query?)`
-- `api.sensors(vesselId?).latest_readings(query?)`
-- `api.sensors(vesselId?).virtualsensors.latest_reading(query?)`
-- `api.sensors(vesselId?).data(query?)`
+- `triton.sensors(vesselId?).list()`
+- `triton.sensors(vesselId?).sensor(sensorId).latest_reading(query?)`
+- `triton.sensors(vesselId?).sensor(sensorId).readings(query?)`
+- `triton.sensors(vesselId?).latest_readings(query?)`
+- `triton.sensors(vesselId?).virtualsensors.latest_reading(query?)`
+- `triton.sensors(vesselId?).data(query?)`
 
 ### Tokens
 
-- `api.token.create(body, query?)`
-- `api.token.renew(force?)`
-- `api.token.valid()`
+- `triton.token.create(body, query?)`
+- `triton.token.renew(force?)`
+- `triton.token.valid()`
 
 ### Low-level request
 
-- `api.request(path, method, args, requestInit?)`
+- `triton.request(path, method, args, requestInit?)`
 
 Use this only when you need direct access to typed route-level calls.
 
